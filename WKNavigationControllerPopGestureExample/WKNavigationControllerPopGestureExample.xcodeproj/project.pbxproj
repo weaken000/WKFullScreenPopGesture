@@ -1,0 +1,562 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		174D5AF5202FEFE900F8DCD4 /* TestNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174D5AF4202FEFE900F8DCD4 /* TestNavigationController.swift */; };
+		17D009A2202E9BC400EF8AC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D009A1202E9BC400EF8AC1 /* AppDelegate.swift */; };
+		17D009A4202E9BC400EF8AC1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D009A3202E9BC400EF8AC1 /* ViewController.swift */; };
+		17D009A7202E9BC400EF8AC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17D009A5202E9BC400EF8AC1 /* Main.storyboard */; };
+		17D009A9202E9BC400EF8AC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17D009A8202E9BC400EF8AC1 /* Assets.xcassets */; };
+		17D009AC202E9BC400EF8AC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17D009AA202E9BC400EF8AC1 /* LaunchScreen.storyboard */; };
+		17D009B7202E9BC400EF8AC1 /* WKNavigationControllerPopGestureExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D009B6202E9BC400EF8AC1 /* WKNavigationControllerPopGestureExampleTests.swift */; };
+		17D009C2202E9BC400EF8AC1 /* WKNavigationControllerPopGestureExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D009C1202E9BC400EF8AC1 /* WKNavigationControllerPopGestureExampleUITests.swift */; };
+		17D009D6202E9C5C00EF8AC1 /* UINavigationController+WKFullScreenPopGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D009D5202E9C5C00EF8AC1 /* UINavigationController+WKFullScreenPopGesture.swift */; };
+		17D009D8202E9E8000EF8AC1 /* FullScreenPopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D009D7202E9E8000EF8AC1 /* FullScreenPopViewController.swift */; };
+		17D009DA202E9ED400EF8AC1 /* BorderPopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D009D9202E9ED400EF8AC1 /* BorderPopViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		17D009B3202E9BC400EF8AC1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 17D00996202E9BC300EF8AC1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 17D0099D202E9BC400EF8AC1;
+			remoteInfo = WKNavigationControllerPopGestureExample;
+		};
+		17D009BE202E9BC400EF8AC1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 17D00996202E9BC300EF8AC1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 17D0099D202E9BC400EF8AC1;
+			remoteInfo = WKNavigationControllerPopGestureExample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		174D5AF4202FEFE900F8DCD4 /* TestNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestNavigationController.swift; sourceTree = "<group>"; };
+		17D0099E202E9BC400EF8AC1 /* WKNavigationControllerPopGestureExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WKNavigationControllerPopGestureExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		17D009A1202E9BC400EF8AC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		17D009A3202E9BC400EF8AC1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		17D009A6202E9BC400EF8AC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		17D009A8202E9BC400EF8AC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		17D009AB202E9BC400EF8AC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		17D009AD202E9BC400EF8AC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17D009B2202E9BC400EF8AC1 /* WKNavigationControllerPopGestureExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WKNavigationControllerPopGestureExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		17D009B6202E9BC400EF8AC1 /* WKNavigationControllerPopGestureExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKNavigationControllerPopGestureExampleTests.swift; sourceTree = "<group>"; };
+		17D009B8202E9BC400EF8AC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17D009BD202E9BC400EF8AC1 /* WKNavigationControllerPopGestureExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WKNavigationControllerPopGestureExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		17D009C1202E9BC400EF8AC1 /* WKNavigationControllerPopGestureExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKNavigationControllerPopGestureExampleUITests.swift; sourceTree = "<group>"; };
+		17D009C3202E9BC400EF8AC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17D009D5202E9C5C00EF8AC1 /* UINavigationController+WKFullScreenPopGesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+WKFullScreenPopGesture.swift"; sourceTree = "<group>"; };
+		17D009D7202E9E8000EF8AC1 /* FullScreenPopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullScreenPopViewController.swift; sourceTree = "<group>"; };
+		17D009D9202E9ED400EF8AC1 /* BorderPopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderPopViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		17D0099B202E9BC400EF8AC1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17D009AF202E9BC400EF8AC1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17D009BA202E9BC400EF8AC1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		17D00995202E9BC300EF8AC1 = {
+			isa = PBXGroup;
+			children = (
+				17D009D4202E9C5C00EF8AC1 /* WKNavigationControllerPopGesture */,
+				17D009A0202E9BC400EF8AC1 /* WKNavigationControllerPopGestureExample */,
+				17D009B5202E9BC400EF8AC1 /* WKNavigationControllerPopGestureExampleTests */,
+				17D009C0202E9BC400EF8AC1 /* WKNavigationControllerPopGestureExampleUITests */,
+				17D0099F202E9BC400EF8AC1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		17D0099F202E9BC400EF8AC1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				17D0099E202E9BC400EF8AC1 /* WKNavigationControllerPopGestureExample.app */,
+				17D009B2202E9BC400EF8AC1 /* WKNavigationControllerPopGestureExampleTests.xctest */,
+				17D009BD202E9BC400EF8AC1 /* WKNavigationControllerPopGestureExampleUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		17D009A0202E9BC400EF8AC1 /* WKNavigationControllerPopGestureExample */ = {
+			isa = PBXGroup;
+			children = (
+				17D009A1202E9BC400EF8AC1 /* AppDelegate.swift */,
+				17D009A3202E9BC400EF8AC1 /* ViewController.swift */,
+				17D009D7202E9E8000EF8AC1 /* FullScreenPopViewController.swift */,
+				17D009D9202E9ED400EF8AC1 /* BorderPopViewController.swift */,
+				174D5AF4202FEFE900F8DCD4 /* TestNavigationController.swift */,
+				17D009A5202E9BC400EF8AC1 /* Main.storyboard */,
+				17D009A8202E9BC400EF8AC1 /* Assets.xcassets */,
+				17D009AA202E9BC400EF8AC1 /* LaunchScreen.storyboard */,
+				17D009AD202E9BC400EF8AC1 /* Info.plist */,
+			);
+			path = WKNavigationControllerPopGestureExample;
+			sourceTree = "<group>";
+		};
+		17D009B5202E9BC400EF8AC1 /* WKNavigationControllerPopGestureExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				17D009B6202E9BC400EF8AC1 /* WKNavigationControllerPopGestureExampleTests.swift */,
+				17D009B8202E9BC400EF8AC1 /* Info.plist */,
+			);
+			path = WKNavigationControllerPopGestureExampleTests;
+			sourceTree = "<group>";
+		};
+		17D009C0202E9BC400EF8AC1 /* WKNavigationControllerPopGestureExampleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				17D009C1202E9BC400EF8AC1 /* WKNavigationControllerPopGestureExampleUITests.swift */,
+				17D009C3202E9BC400EF8AC1 /* Info.plist */,
+			);
+			path = WKNavigationControllerPopGestureExampleUITests;
+			sourceTree = "<group>";
+		};
+		17D009D4202E9C5C00EF8AC1 /* WKNavigationControllerPopGesture */ = {
+			isa = PBXGroup;
+			children = (
+				17D009D5202E9C5C00EF8AC1 /* UINavigationController+WKFullScreenPopGesture.swift */,
+			);
+			path = WKNavigationControllerPopGesture;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		17D0099D202E9BC400EF8AC1 /* WKNavigationControllerPopGestureExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 17D009C6202E9BC400EF8AC1 /* Build configuration list for PBXNativeTarget "WKNavigationControllerPopGestureExample" */;
+			buildPhases = (
+				17D0099A202E9BC400EF8AC1 /* Sources */,
+				17D0099B202E9BC400EF8AC1 /* Frameworks */,
+				17D0099C202E9BC400EF8AC1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WKNavigationControllerPopGestureExample;
+			productName = WKNavigationControllerPopGestureExample;
+			productReference = 17D0099E202E9BC400EF8AC1 /* WKNavigationControllerPopGestureExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		17D009B1202E9BC400EF8AC1 /* WKNavigationControllerPopGestureExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 17D009C9202E9BC400EF8AC1 /* Build configuration list for PBXNativeTarget "WKNavigationControllerPopGestureExampleTests" */;
+			buildPhases = (
+				17D009AE202E9BC400EF8AC1 /* Sources */,
+				17D009AF202E9BC400EF8AC1 /* Frameworks */,
+				17D009B0202E9BC400EF8AC1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				17D009B4202E9BC400EF8AC1 /* PBXTargetDependency */,
+			);
+			name = WKNavigationControllerPopGestureExampleTests;
+			productName = WKNavigationControllerPopGestureExampleTests;
+			productReference = 17D009B2202E9BC400EF8AC1 /* WKNavigationControllerPopGestureExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		17D009BC202E9BC400EF8AC1 /* WKNavigationControllerPopGestureExampleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 17D009CC202E9BC400EF8AC1 /* Build configuration list for PBXNativeTarget "WKNavigationControllerPopGestureExampleUITests" */;
+			buildPhases = (
+				17D009B9202E9BC400EF8AC1 /* Sources */,
+				17D009BA202E9BC400EF8AC1 /* Frameworks */,
+				17D009BB202E9BC400EF8AC1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				17D009BF202E9BC400EF8AC1 /* PBXTargetDependency */,
+			);
+			name = WKNavigationControllerPopGestureExampleUITests;
+			productName = WKNavigationControllerPopGestureExampleUITests;
+			productReference = 17D009BD202E9BC400EF8AC1 /* WKNavigationControllerPopGestureExampleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		17D00996202E9BC300EF8AC1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = lwk;
+				TargetAttributes = {
+					17D0099D202E9BC400EF8AC1 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = X5L85KS9B2;
+						ProvisioningStyle = Automatic;
+					};
+					17D009B1202E9BC400EF8AC1 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = X5L85KS9B2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 17D0099D202E9BC400EF8AC1;
+					};
+					17D009BC202E9BC400EF8AC1 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = X5L85KS9B2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 17D0099D202E9BC400EF8AC1;
+					};
+				};
+			};
+			buildConfigurationList = 17D00999202E9BC300EF8AC1 /* Build configuration list for PBXProject "WKNavigationControllerPopGestureExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 17D00995202E9BC300EF8AC1;
+			productRefGroup = 17D0099F202E9BC400EF8AC1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				17D0099D202E9BC400EF8AC1 /* WKNavigationControllerPopGestureExample */,
+				17D009B1202E9BC400EF8AC1 /* WKNavigationControllerPopGestureExampleTests */,
+				17D009BC202E9BC400EF8AC1 /* WKNavigationControllerPopGestureExampleUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		17D0099C202E9BC400EF8AC1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17D009AC202E9BC400EF8AC1 /* LaunchScreen.storyboard in Resources */,
+				17D009A9202E9BC400EF8AC1 /* Assets.xcassets in Resources */,
+				17D009A7202E9BC400EF8AC1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17D009B0202E9BC400EF8AC1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17D009BB202E9BC400EF8AC1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		17D0099A202E9BC400EF8AC1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17D009D6202E9C5C00EF8AC1 /* UINavigationController+WKFullScreenPopGesture.swift in Sources */,
+				17D009A4202E9BC400EF8AC1 /* ViewController.swift in Sources */,
+				17D009A2202E9BC400EF8AC1 /* AppDelegate.swift in Sources */,
+				17D009DA202E9ED400EF8AC1 /* BorderPopViewController.swift in Sources */,
+				17D009D8202E9E8000EF8AC1 /* FullScreenPopViewController.swift in Sources */,
+				174D5AF5202FEFE900F8DCD4 /* TestNavigationController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17D009AE202E9BC400EF8AC1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17D009B7202E9BC400EF8AC1 /* WKNavigationControllerPopGestureExampleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17D009B9202E9BC400EF8AC1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17D009C2202E9BC400EF8AC1 /* WKNavigationControllerPopGestureExampleUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		17D009B4202E9BC400EF8AC1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 17D0099D202E9BC400EF8AC1 /* WKNavigationControllerPopGestureExample */;
+			targetProxy = 17D009B3202E9BC400EF8AC1 /* PBXContainerItemProxy */;
+		};
+		17D009BF202E9BC400EF8AC1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 17D0099D202E9BC400EF8AC1 /* WKNavigationControllerPopGestureExample */;
+			targetProxy = 17D009BE202E9BC400EF8AC1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		17D009A5202E9BC400EF8AC1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				17D009A6202E9BC400EF8AC1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		17D009AA202E9BC400EF8AC1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				17D009AB202E9BC400EF8AC1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		17D009C4202E9BC400EF8AC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		17D009C5202E9BC400EF8AC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		17D009C7202E9BC400EF8AC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = X5L85KS9B2;
+				INFOPLIST_FILE = WKNavigationControllerPopGestureExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yzl.WKNavigationControllerPopGestureExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		17D009C8202E9BC400EF8AC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = X5L85KS9B2;
+				INFOPLIST_FILE = WKNavigationControllerPopGestureExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yzl.WKNavigationControllerPopGestureExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		17D009CA202E9BC400EF8AC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = X5L85KS9B2;
+				INFOPLIST_FILE = WKNavigationControllerPopGestureExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yzl.WKNavigationControllerPopGestureExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WKNavigationControllerPopGestureExample.app/WKNavigationControllerPopGestureExample";
+			};
+			name = Debug;
+		};
+		17D009CB202E9BC400EF8AC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = X5L85KS9B2;
+				INFOPLIST_FILE = WKNavigationControllerPopGestureExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yzl.WKNavigationControllerPopGestureExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WKNavigationControllerPopGestureExample.app/WKNavigationControllerPopGestureExample";
+			};
+			name = Release;
+		};
+		17D009CD202E9BC400EF8AC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = X5L85KS9B2;
+				INFOPLIST_FILE = WKNavigationControllerPopGestureExampleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yzl.WKNavigationControllerPopGestureExampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = WKNavigationControllerPopGestureExample;
+			};
+			name = Debug;
+		};
+		17D009CE202E9BC400EF8AC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = X5L85KS9B2;
+				INFOPLIST_FILE = WKNavigationControllerPopGestureExampleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yzl.WKNavigationControllerPopGestureExampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = WKNavigationControllerPopGestureExample;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		17D00999202E9BC300EF8AC1 /* Build configuration list for PBXProject "WKNavigationControllerPopGestureExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17D009C4202E9BC400EF8AC1 /* Debug */,
+				17D009C5202E9BC400EF8AC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		17D009C6202E9BC400EF8AC1 /* Build configuration list for PBXNativeTarget "WKNavigationControllerPopGestureExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17D009C7202E9BC400EF8AC1 /* Debug */,
+				17D009C8202E9BC400EF8AC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		17D009C9202E9BC400EF8AC1 /* Build configuration list for PBXNativeTarget "WKNavigationControllerPopGestureExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17D009CA202E9BC400EF8AC1 /* Debug */,
+				17D009CB202E9BC400EF8AC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		17D009CC202E9BC400EF8AC1 /* Build configuration list for PBXNativeTarget "WKNavigationControllerPopGestureExampleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17D009CD202E9BC400EF8AC1 /* Debug */,
+				17D009CE202E9BC400EF8AC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 17D00996202E9BC300EF8AC1 /* Project object */;
+}
