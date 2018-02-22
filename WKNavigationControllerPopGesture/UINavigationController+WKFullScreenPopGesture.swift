@@ -14,8 +14,6 @@ fileprivate struct AssociatedKey {
     static var navigationBarHidden          = 0
     static var popGestrueEnable             = 0
     static var scrollViewPopEnable          = 0
-    static var navigationBarBackgroundColor = 0
-    static var navigationBarTitleColor      = 0
     static var gestureDelegate              = 0
     static var popGestureRecognizer         = 0
     static var topVC                        = 0
@@ -39,7 +37,7 @@ class WKNavigationControllerPopGeustureDelegate: NSObject, UIGestureRecognizerDe
             return false
         }
         
-        //控制器存在scrollView，开启边缘返回
+        //控制器是否开启边缘返回
         if let lastVC = navi.viewControllers.last, lastVC.scrollViewPopEnable == true {
             if (gestureRecognizer as! UIPanGestureRecognizer).translation(in: gestureRecognizer.view).x > 0, gestureRecognizer.location(in: gestureRecognizer.view).x <= 60 {
                 return lastVC.viewControllerShouldPop()
@@ -85,7 +83,7 @@ extension UINavigationController {
         }
     }
     
-    fileprivate var currentVC: UIViewController? {
+    fileprivate var wk_topVC: UIViewController? {
         set {
             objc_setAssociatedObject(self, &AssociatedKey.topVC, newValue, .OBJC_ASSOCIATION_ASSIGN)
         }
@@ -105,12 +103,26 @@ extension UINavigationController {
             return delegate!
         }
     }
-    
-    open static let wk_navigationControllerMethodsSwizzling: () = {
-        guard let orginMethod = class_getInstanceMethod(UINavigationController.self, #selector(pushViewController(_:animated:))), let swizzMethod = class_getInstanceMethod(UINavigationController.self, #selector(wk_pushViewController(_:animated:))) else {
-            return
+
+    private func setupViewWillAppearInject(_ viewController: UIViewController) {
+        let injectObj = viewWillAppearInjectObject { [weak self] (vc, animated) in
+            if  let `self` = self {
+                self.setNavigationBarHidden(vc.navigationBarHidden, animated: animated)
+            }
         }
-        method_exchangeImplementations(orginMethod, swizzMethod)
+
+        viewController.viewControllerWillAppearInjectBlock = injectObj
+        if let lastVC = viewControllers.last, lastVC.viewControllerWillAppearInjectBlock == nil {
+            lastVC.viewControllerWillAppearInjectBlock = injectObj
+        }
+    }
+    
+    
+    
+    public static let wk_navigationControllerMethodsSwizzling: () = {
+        if let orginMethod = class_getInstanceMethod(UINavigationController.self, #selector(pushViewController(_:animated:))), let swizzMethod = class_getInstanceMethod(UINavigationController.self, #selector(wk_pushViewController(_:animated:))) {
+            method_exchangeImplementations(orginMethod, swizzMethod)
+        }
     }()
     
     @objc private func wk_pushViewController(_ viewController: UIViewController, animated: Bool) {
@@ -131,27 +143,14 @@ extension UINavigationController {
         }
         
         setupViewWillAppearInject(viewController)
-        currentVC = viewController
+        wk_topVC = viewController
         wk_pushViewController(viewController, animated: animated)
     }
-    
-    private func setupViewWillAppearInject(_ viewController: UIViewController) {
-        let injectObj = viewWillAppearInjectObject { [weak self] (vc, animated) in
-            if  let `self` = self {
-                self.setNavigationBarHidden(vc.navigationBarHidden, animated: animated)
-                self.navigationBar.barTintColor = vc.navigationBarColor
-            }
-        }
 
-        viewController.viewControllerWillAppearInjectBlock = injectObj
-        if let lastVC = viewControllers.last, lastVC.viewControllerWillAppearInjectBlock == nil {
-            lastVC.viewControllerWillAppearInjectBlock = injectObj
-        }
-    }
     
 }
 
-extension UINavigationController: UINavigationControllerDelegate {
+extension UINavigationController: UINavigationControllerDelegate, UINavigationBarDelegate {
 
     public func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
         
@@ -160,26 +159,55 @@ extension UINavigationController: UINavigationControllerDelegate {
         }
         
         guard let coor = topVC.transitionCoordinator else {
+            if let cur = self.wk_topVC, cur != topVC {
+                cur.viewControllerPopAnimateWillFinished()
+                self.wk_topVC = viewController
+            }
             return
         }
         
         coor.animate(alongsideTransition: nil) { [weak self, weak viewController] (ctx) in
-            if let `self` = self, let vc = viewController, let cur = self.currentVC {
+            if let `self` = self, let vc = viewController, let cur = self.wk_topVC {
                 if ctx.isCancelled == false {
                     if cur != vc {
                         cur.viewControllerPopAnimateWillFinished()
-                        self.currentVC = vc
+                        self.wk_topVC = vc
                     }
                 }
             }
         }
-    }
-    
-    //导航栏完成push或者pop
-    public func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
         
     }
     
+    public func navigationBar(_ navigationBar: UINavigationBar, shouldPop item: UINavigationItem) -> Bool {
+        
+        guard let items = navigationBar.items, let topVC = self.topViewController else {
+            return true
+        }
+        //调用了popViewController后，viewControlers会先弹出最后一个控制器，所以viewController会少于items,不会再向下调用topVC的方法
+        //如果只是点击了返回按钮，不会弹出控制器，所以会去调用topVC的viewControllerShouldPop方法
+        if viewControllers.count < items.count {
+            return true
+        }
+
+        let flag = topVC.viewControllerShouldPop()
+        
+        if flag {
+            _ = popViewController(animated: true)
+        }
+        else {
+            for subview in navigationBar.subviews {
+                if 0.0 < subview.alpha && subview.alpha < 1.0 {
+                    UIView.animate(withDuration: 0.25, animations: { 
+                        subview.alpha = 1.0
+                    })
+                }
+            }
+        }
+        
+        return false
+    }
+
 }
 
 extension UIViewController {
@@ -217,22 +245,6 @@ extension UIViewController {
             objc_setAssociatedObject(self, &AssociatedKey.scrollViewPopEnable, newValue, .OBJC_ASSOCIATION_ASSIGN)
         }
     }
-    var navigationBarColor: UIColor? {
-        get {
-            return objc_getAssociatedObject(self, &AssociatedKey.navigationBarBackgroundColor) as? UIColor ?? kMainColor
-        }
-        set {
-            objc_setAssociatedObject(self, &AssociatedKey.navigationBarBackgroundColor, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        }
-    }
-    var navigationBarTitleColor: UIColor? {
-        get {
-            return objc_getAssociatedObject(self, &AssociatedKey.navigationBarTitleColor) as? UIColor ?? UIColor.white
-        }
-        set {
-            objc_setAssociatedObject(self, &AssociatedKey.navigationBarTitleColor, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        }
-    }
     
     //是否需要返回
     @discardableResult
@@ -258,6 +270,7 @@ extension UIViewController {
             appear(self, animated)
         }
     }
+    
 }
 
 class viewWillAppearInjectObject: NSObject {
